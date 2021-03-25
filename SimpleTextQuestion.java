@@ -8,10 +8,9 @@ public class SimpleTextQuestion extends Question {
     }
 
     public int getPoints(String providedAnswer) {
-
         providedAnswer = providedAnswer.trim();
 
-        if (providedAnswer.equals(correctAnswer)) {
+        if (providedAnswer.equals(providedAnswer)) {
             return points;
         } else {
             return 0;
@@ -23,7 +22,10 @@ public class SimpleTextQuestion extends Question {
     }
 
     public String toString() {
-        return "Correct answer: " + correctAnswer + " - points: " + points;
+        String output = "SimpleTextQuestion:\n";
+        output += "Correct answer: " + correctAnswer + "\n";
+        output += "Points: " + points + "\n";
+        return output;
     }
 
 }

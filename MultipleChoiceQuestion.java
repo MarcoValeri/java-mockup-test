@@ -1,4 +1,4 @@
-public class MultipleChoiceQuestion {
+public class MultipleChoiceQuestion extends Question {
     private String[] options;
     private int correctAnswerIndex, points;
 
@@ -9,7 +9,6 @@ public class MultipleChoiceQuestion {
     }
 
     public int getPoints(String providedAnswer) {
-
         providedAnswer = providedAnswer.trim();
 
         if (providedAnswer.equals(options[correctAnswerIndex])) {
@@ -17,7 +16,6 @@ public class MultipleChoiceQuestion {
         } else {
             return 0;
         }
-
     }
 
     public String getCorrectAnswer() {
@@ -25,8 +23,11 @@ public class MultipleChoiceQuestion {
     }
 
     public String toString() {
-        String output = "Multiple Choice question, options: " + java.util.Arrays.toString(options);
-        output += ", correct answer index: " + correctAnswerIndex + ", points: " + points;
+        String output = "MultipleChoiceQuestion:\n";
+        for (int i = 0; i < options.length; i++) {
+            output += "- " + options[i] + "\n";
+        }
+        output += "Points: " + points;
         return output;
     }
 
